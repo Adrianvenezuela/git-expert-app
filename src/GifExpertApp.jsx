@@ -10,27 +10,30 @@ export const GifExpertApp = () => {
     //categories.push(newCategory);
     setCategories([newCategory, ...categories]);
   };
+
+  return (
+    <>
+      {/* titulo */}
+      <div>GifExpertApp</div>
+
+      {/* input */}
+      <AddCategory
+        //setCategories={ setCategories }
+        onNewCategory={(value) => onAddCategory(value)}
+      />
+
+      {/* listado de Gif */}
+
+      <ol>
+        {categories.map((category) => (
+          <div key={category}>
+            <h3>{category}</h3>
+            <li>{category}</li>
+          </div>
+        ))}
+      </ol>
+
+      {/* Git Item */}
+    </>
+  );
 };
-<>
-  {/* titulo */}
-  <div>GifExpertApp</div>
-
-  {/* input */}
-  <AddCategory
-    //setCategories={ setCategories }
-    onNewCategory={ (value) => onAddCategory(value) }
-  />
-
-  {/* listado de Gif */}
-
-  <ol>
-    {categories.map((category) => (
-      <div key={category}>
-        <h3>{category}</h3>
-        <li>{category}</li>
-      </div>
-    ))}
-  </ol>
-
-  {/* Git Item */}
-</>;
